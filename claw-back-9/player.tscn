@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://c8htwlqhweg35"]
+
+[ext_resource type="Texture2D" uid="uid://df8fo503vykjp" path="res://icon.svg" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://dbjtnurl4d5be" path="res://scripts/player.gd" id="1_onrkg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3i8w2"]
+
+[sub_resource type="GDScript" id="GDScript_4flbx"]
+script/source = "extends Node
+
+
+var player: CharacterBody2D
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	player = get_parent()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	player.position.y += 1
+
+
+#func _input(event: InputEvent) -> void:
+"
+
+[node name="Player" type="CharacterBody2D" unique_id=292465412]
+script = ExtResource("1_onrkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1340486290]
+scale = Vector2(0.20703122, 0.2070306)
+texture = ExtResource("1_4flbx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1868295848]
+shape = SubResource("RectangleShape2D_3i8w2")
+
+[node name="actions_cat" type="Node" parent="." unique_id=786443223]
+script = SubResource("GDScript_4flbx")
+
+[node name="Idle" type="Node" parent="actions_cat" unique_id=1105692390]
