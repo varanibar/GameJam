@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bycvhtpjrtpkr"]
+
+[ext_resource type="SpriteFrames" uid="uid://bii52pm7mer86" path="res://scenes/characters/sprite_frame_ghost.tres" id="1_j2eer"]
+[ext_resource type="Script" uid="uid://de4i5ojk125kl" path="res://scenes/characters/ghost.gd" id="1_t3xhi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4e62"]
+size = Vector2(43, 56)
+
+[node name="Ghost" type="CharacterBody2D" unique_id=860187397 node_paths=PackedStringArray("animation_ghost")]
+script = ExtResource("1_t3xhi")
+animation_ghost = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=810819191]
+sprite_frames = ExtResource("1_j2eer")
+animation = &"idle"
+frame_progress = 0.15574658
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1372995847]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_p4e62")

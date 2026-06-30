@@ -1,18 +1,31 @@
 [gd_scene format=3 uid="uid://bh0tfbp1us0m5"]
 
 [ext_resource type="SpriteFrames" uid="uid://bexdf7o05fdie" path="res://scenes/characters/sprite_frame_character.tres" id="1_rp718"]
-[ext_resource type="Script" uid="uid://2g84jnmffxri" path="res://scenes/characters/player.gd" id="1_yewv4"]
+[ext_resource type="Script" uid="uid://ch5r7jmvdsvj5" path="res://scenes/characters/player.gd" id="1_yewv4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7cfs"]
 size = Vector2(13, 15)
 
-[node name="Player" type="CharacterBody2D" unique_id=791686970]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4e62"]
+size = Vector2(13, 15)
+
+[node name="Player" type="CharacterBody2D" unique_id=791686970 node_paths=PackedStringArray("animation", "area_2d")]
+collision_layer = 4
 script = ExtResource("1_yewv4")
+animation = NodePath("AnimatedSprite2D")
+area_2d = NodePath("Area2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=513240142]
+shape = SubResource("RectangleShape2D_e7cfs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1966941772]
 sprite_frames = ExtResource("1_rp718")
 animation = &"idle"
+frame_progress = 0.47803122
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=513240142]
-position = Vector2(-0.5, -0.5)
-shape = SubResource("RectangleShape2D_e7cfs")
+[node name="Area2D" type="Area2D" parent="." unique_id=1908408781]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1562251792]
+shape = SubResource("RectangleShape2D_p4e62")

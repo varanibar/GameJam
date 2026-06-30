@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d2y08c38phn14"]
+
+[ext_resource type="Script" uid="uid://b7npcff1lap3r" path="res://scenes/characters/kitty.gd" id="1_2jn2o"]
+[ext_resource type="SpriteFrames" uid="uid://b1ru3vwh7gfm3" path="res://scenes/characters/sprite_frame_kitty.tres" id="1_cc48p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2jn2o"]
+size = Vector2(34, 23)
+
+[node name="Kitty" type="CharacterBody2D" unique_id=1656587690 node_paths=PackedStringArray("animation")]
+script = ExtResource("1_2jn2o")
+animation = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1766981908]
+sprite_frames = ExtResource("1_cc48p")
+animation = &"jump"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1120365705]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_2jn2o")
