@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://021l0ktlruy6"
-path="res://.godot/imported/ghost_idle_spritesheet.png-5d16e68ca96bf9a0ff9902abfcee15af.ctex"
+uid="uid://47o35pl1b7ou"
+path="res://.godot/imported/tileset_mazmorra.png-fd8adabd43bba5194959f063afc438f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/ghost_idle_spritesheet.png"
-dest_files=["res://.godot/imported/ghost_idle_spritesheet.png-5d16e68ca96bf9a0ff9902abfcee15af.ctex"]
+source_file="res://sprite_sheets/tileset_mazmorra.png"
+dest_files=["res://.godot/imported/tileset_mazmorra.png-fd8adabd43bba5194959f063afc438f0.ctex"]
 
 [params]
 

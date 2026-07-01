@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bh0tfbp1us0m5"]
 
-[ext_resource type="SpriteFrames" uid="uid://bexdf7o05fdie" path="res://scenes/characters/sprite_frame_character.tres" id="1_rp718"]
-[ext_resource type="Script" uid="uid://ch5r7jmvdsvj5" path="res://scenes/characters/player.gd" id="1_yewv4"]
+[ext_resource type="SpriteFrames" uid="uid://bexdf7o05fdie" path="res://scenes/characters/practice_character/sprite_frame_character.tres" id="1_rp718"]
+[ext_resource type="Script" uid="uid://ch5r7jmvdsvj5" path="res://scenes/characters/practice_character/player.gd" id="1_yewv4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7cfs"]
 size = Vector2(13, 15)

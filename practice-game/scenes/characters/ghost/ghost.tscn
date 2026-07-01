@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bycvhtpjrtpkr"]
 
-[ext_resource type="SpriteFrames" uid="uid://bii52pm7mer86" path="res://scenes/characters/sprite_frame_ghost.tres" id="1_j2eer"]
-[ext_resource type="Script" uid="uid://de4i5ojk125kl" path="res://scenes/characters/ghost.gd" id="1_t3xhi"]
+[ext_resource type="SpriteFrames" uid="uid://bii52pm7mer86" path="res://scenes/characters/ghost/sprite_frame_ghost.tres" id="1_j2eer"]
+[ext_resource type="Script" uid="uid://de4i5ojk125kl" path="res://scenes/characters/ghost/ghost.gd" id="1_t3xhi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p4e62"]
 size = Vector2(43, 56)

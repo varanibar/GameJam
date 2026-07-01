@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dikaop4nchj18"
-path="res://.godot/imported/mago_spritesheet.png-d763f4a6a07b61488452c0850218f8b4.ctex"
+uid="uid://021l0ktlruy6"
+path="res://.godot/imported/ghost_idle_spritesheet.png-b1bd3c3b54984a69338b765c84f02ff9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/mago_spritesheet.png"
-dest_files=["res://.godot/imported/mago_spritesheet.png-d763f4a6a07b61488452c0850218f8b4.ctex"]
+source_file="res://sprite_sheets/ghost_idle_spritesheet.png"
+dest_files=["res://.godot/imported/ghost_idle_spritesheet.png-b1bd3c3b54984a69338b765c84f02ff9.ctex"]
 
 [params]
 

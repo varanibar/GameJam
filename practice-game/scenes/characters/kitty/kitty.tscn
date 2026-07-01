@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d2y08c38phn14"]
 
-[ext_resource type="Script" uid="uid://b7npcff1lap3r" path="res://scenes/characters/kitty.gd" id="1_2jn2o"]
-[ext_resource type="SpriteFrames" uid="uid://b1ru3vwh7gfm3" path="res://scenes/characters/sprite_frame_kitty.tres" id="1_cc48p"]
+[ext_resource type="Script" uid="uid://b7npcff1lap3r" path="res://scenes/characters/kitty/kitty.gd" id="1_2jn2o"]
+[ext_resource type="SpriteFrames" uid="uid://b1ru3vwh7gfm3" path="res://scenes/characters/kitty/sprite_frame_kitty.tres" id="1_cc48p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2jn2o"]
 size = Vector2(34, 24.078125)

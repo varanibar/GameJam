@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://47o35pl1b7ou"
-path="res://.godot/imported/tileset_mazmorra.png-995e5bfa4cad9f0eb88f2627b42749f5.ctex"
+uid="uid://cncq51q22rcwe"
+path="res://.godot/imported/kitty_run.png-1ed83af1defe66057cb008e4561cddca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/tileset_mazmorra.png"
-dest_files=["res://.godot/imported/tileset_mazmorra.png-995e5bfa4cad9f0eb88f2627b42749f5.ctex"]
+source_file="res://sprite_sheets/kitty_run.png"
+dest_files=["res://.godot/imported/kitty_run.png-1ed83af1defe66057cb008e4561cddca.ctex"]
 
 [params]
 

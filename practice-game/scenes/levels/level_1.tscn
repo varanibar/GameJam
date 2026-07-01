@@ -2,13 +2,13 @@
 
 [ext_resource type="TileSet" uid="uid://bsyt1y5gx2v58" path="res://tile_sets/dungeon.tres" id="1_7n1yb"]
 [ext_resource type="PackedScene" uid="uid://dvq7pspowfvs" path="res://scenes/borders/border.tscn" id="1_ghvtn"]
-[ext_resource type="PackedScene" uid="uid://bh0tfbp1us0m5" path="res://scenes/characters/player.tscn" id="3_janvk"]
-[ext_resource type="PackedScene" uid="uid://d2y08c38phn14" path="res://scenes/characters/kitty.tscn" id="4_igcjm"]
-[ext_resource type="PackedScene" uid="uid://bycvhtpjrtpkr" path="res://scenes/characters/ghost.tscn" id="5_jr17i"]
+[ext_resource type="PackedScene" uid="uid://bh0tfbp1us0m5" path="res://scenes/characters/practice_character/player.tscn" id="3_janvk"]
+[ext_resource type="PackedScene" uid="uid://d2y08c38phn14" path="res://scenes/characters/kitty/kitty.tscn" id="4_igcjm"]
+[ext_resource type="PackedScene" uid="uid://bycvhtpjrtpkr" path="res://scenes/characters/ghost/ghost.tscn" id="5_jr17i"]
 
 [node name="Level1" type="Node2D" unique_id=801104236]
 
-[node name="Level" type="TileMapLayer" parent="." unique_id=1429428056]
+[node name="Tiles" type="TileMapLayer" parent="." unique_id=1429428056]
 tile_map_data = PackedByteArray("AADz/wMAAAAAAAAAAAD0/wMAAAAAAAAAAAD1/wMAAAAAAAAAAAD2/wIAAAAAAAAAAAD3/wIAAAAAAAAAAAD4/wIAAAAAAAAAAAD5/wIAAAAAAAAAAAD6/wEAAAAAAAAAAAD7/wEAAAAAAAAAAAD8/wEAAAAAAAAAAAD//wYAAAAAAAAAAAAAAAUAAAAAAAAAAAD//wUAAAAAAAAAAAAAAAYAAAAAAAAAAAAMAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAEAAMAAAACAAAAAAAFAAMAAAACAAAAAAD8/wAAAAAAAAAAAAD7/wAAAAAAAAAAAAD6/wAAAAAAAAAAAAD4//3/AAAAAAAAAAD3//3/AAAAAAAAAAD2//3/AAAAAAAAAAD6////AAADAAEAAAD3//z/AAADAAEAAAD2//z/AAADAAEAAAADAAMAAAACAAAAAAACAAMAAAACAAAAAAD6/wIAAAAAAAIAAAD7/wIAAAAAAAIAAAD8/wIAAAAAAAIAAAAMAAIAAAAAAAIAAAALAAIAAAAAAAIAAAAKAAIAAAAAAAIAAAAJAAIAAAAAAAIAAAAIAAIAAAADAAAAAAAHAAIAAAADAAAAAAAGAAIAAAADAAAAAAD///v/AAACAAAAAAAAAPv/AAACAAAAAAD6//v/AAACAAAAAAD7//v/AAACAAAAAAD8//v/AAACAAAAAAA=")
 tile_set = ExtResource("1_7n1yb")
 
