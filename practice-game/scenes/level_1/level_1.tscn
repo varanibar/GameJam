@@ -20,13 +20,13 @@ tile_set = ExtResource("1_7n1yb")
 [node name="Border" parent="." unique_id=108868477 instance=ExtResource("1_ghvtn")]
 
 [node name="Player" parent="." unique_id=791686970 instance=ExtResource("3_janvk")]
+visible = false
 position = Vector2(-66, -15)
 
 [node name="Kitty" parent="." unique_id=1656587690 instance=ExtResource("4_igcjm")]
-visible = false
 position = Vector2(-163, 89)
 
 [node name="Ghost" parent="." unique_id=860187397 instance=ExtResource("5_jr17i")]
-visible = false
 position = Vector2(132, -71)
 scale = Vector2(0.5, 0.5)
+collision_layer = 0
