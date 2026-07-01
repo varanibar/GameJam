@@ -4,17 +4,19 @@
 [ext_resource type="Script" uid="uid://cs660ndggtffi" path="res://scenes/mugs/mugs.gd" id="1_f58b3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p4e62"]
-size = Vector2(32, 32)
+size = Vector2(16, 16)
 
-[node name="Mugs" type="Node2D" unique_id=1683324784]
+[node name="Mugs" type="Node2D" unique_id=1683324784 node_paths=PackedStringArray("animation")]
 script = ExtResource("1_f58b3")
+animation = NodePath("AnimatedSprite2D")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=551149434]
-position = Vector2(-2.3841858e-07, 2.3841858e-07)
-scale = Vector2(0.875, 0.875)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=60696780]
+position = Vector2(-3.8146973e-06, -3.8146973e-06)
+scale = Vector2(0.3125, 0.3125)
 sprite_frames = ExtResource("1_djaul")
-animation = &"enchanted"
-frame_progress = 0.9544919
+animation = &"broken"
+frame = 2
+frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1593751333]
 collision_layer = 8

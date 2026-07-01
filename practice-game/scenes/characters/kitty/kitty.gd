@@ -81,8 +81,8 @@ func _attack() -> void:
 #when hitbox touches the mug's area2D:
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	var mug = area.get_parent() #the take_damage function is in the parent node (mugs) and not in the child node (area2d), thats why we get the parent of the area node
-	if mug.has_method("take_damage"):
-		mug.take_damage()
+	if mug.has_method("destroy_mug"):
+		mug.destroy_mug()
 
 #when kitty touches a spike it dies:
 func _on_area_2d_body_entered(_body: Node2D) -> void:

@@ -22,7 +22,7 @@ hitbox = NodePath("Hitbox")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1766981908]
 sprite_frames = ExtResource("1_cc48p")
 animation = &"attack"
-frame_progress = 0.03393464
+frame_progress = 0.4830882
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1120365705]
 position = Vector2(0.5, 1.5)

@@ -34,7 +34,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_f4ko3")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"broken",
 "speed": 5.0
 }, {
