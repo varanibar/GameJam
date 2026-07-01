@@ -6,19 +6,19 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p4e62"]
 size = Vector2(32, 32)
 
-[node name="Mugs" type="Node2D" unique_id=1683324784 node_paths=PackedStringArray("area_2D")]
+[node name="Mugs" type="Node2D" unique_id=1683324784]
 script = ExtResource("1_f58b3")
-area_2D = NodePath("Area2D")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=551149434]
 position = Vector2(-2.3841858e-07, 2.3841858e-07)
 scale = Vector2(0.875, 0.875)
 sprite_frames = ExtResource("1_djaul")
 animation = &"enchanted"
-frame_progress = 0.67307687
+frame_progress = 0.9544919
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1593751333]
 collision_layer = 8
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=64751127]
 shape = SubResource("RectangleShape2D_p4e62")

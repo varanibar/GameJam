@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 
 signal dead_player
-signal attacking
 
 @export var animation: AnimatedSprite2D #While selecting the Player node, in the inspector panel under "player.gd", change: Animation: AnimatedSprite2D
 @export var area_2D: Area2D #While selecting the Player node, in the inspector panel under "player.gd", change: Area 2D: Areat2D
@@ -19,7 +18,9 @@ var _is_attacking: bool = false
 func _ready():
 	add_to_group("characters") #add_to_group allows the main scene find this node, it filters it out.
 	area_2D.body_entered.connect(_on_area_2d_body_entered) #this cnnects the area to the player, it will call whatever we have in the function _on_area_2d_body_entered
-	#hitbox.area_entered.connect(_on_hitbox_area_entered) #when the hitbox touches another area2D, call this function
+	hitbox.area_entered.connect(_on_hitbox_area_entered) #when the hitbox touches another area2D, call this function
+	hitbox.monitoring = false #hitbox detection ability is off
+
 
 func _physics_process(delta):
 	if _dead:
@@ -34,8 +35,8 @@ func _physics_process(delta):
 
 	#attack
 	if (Input.is_action_just_pressed("attack")):
+		#animation.play("attack")
 		_attack()
-		attacking.emit()
 
 	#side movement
 	if Input.is_action_pressed("right"):
@@ -55,6 +56,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 	#animation
+	if _is_attacking:
+		return
 	if !is_on_floor():
 		animation.play("jump")
 	elif velocity.x != 0:
@@ -64,23 +67,24 @@ func _physics_process(delta):
 
 
 func _attack() -> void:
+	print("attack")
 	if _is_attacking:
 		return
 	_is_attacking = true
 	animation.play("attack")
-	animation.flip_v = true
+	
+	hitbox.monitoring = true
 	await get_tree().create_timer(0.2).timeout
+	hitbox.monitoring = false
 	_is_attacking = false
-	animation.flip_v = false
-#
-#
-#func _on_hitbox_area_entered(area: Area2D) -> void:
-	#print("here")
-	#if area.has_method("take_damage"):
-		#print("here2")
-		#area.take_damage()
 
+#when hitbox touches the mug's area2D:
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	var mug = area.get_parent() #the take_damage function is in the parent node (mugs) and not in the child node (area2d), thats why we get the parent of the area node
+	if mug.has_method("take_damage"):
+		mug.take_damage()
 
+#when kitty touches a spike it dies:
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	animation.modulate = Color.DARK_RED
 	print("DEAD")
