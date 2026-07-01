@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bh0tfbp1us0m5" path="res://scenes/characters/practice_character/player.tscn" id="3_janvk"]
 [ext_resource type="PackedScene" uid="uid://d2y08c38phn14" path="res://scenes/characters/kitty/kitty.tscn" id="4_igcjm"]
 [ext_resource type="PackedScene" uid="uid://bycvhtpjrtpkr" path="res://scenes/characters/ghost/ghost.tscn" id="5_jr17i"]
+[ext_resource type="PackedScene" uid="uid://s3u4yxvfu0uo" path="res://scenes/mugs/mugs.tscn" id="6_sk5k4"]
 
 [node name="Level1" type="Node2D" unique_id=801104236]
 
@@ -30,3 +31,6 @@ position = Vector2(-163, 89)
 position = Vector2(132, -71)
 scale = Vector2(0.5, 0.5)
 collision_layer = 0
+
+[node name="Mugs" parent="." unique_id=1683324784 instance=ExtResource("6_sk5k4")]
+position = Vector2(-59, 93)

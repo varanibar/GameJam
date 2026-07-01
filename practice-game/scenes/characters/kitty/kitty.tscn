@@ -4,23 +4,28 @@
 [ext_resource type="SpriteFrames" uid="uid://b1ru3vwh7gfm3" path="res://scenes/characters/kitty/sprite_frame_kitty.tres" id="1_cc48p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2jn2o"]
-size = Vector2(34, 24.078125)
+size = Vector2(29, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hvnu"]
-size = Vector2(34, 24)
+size = Vector2(28.9375, 23)
 
-[node name="Kitty" type="CharacterBody2D" unique_id=1656587690 node_paths=PackedStringArray("animation", "area_2d")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4e62"]
+size = Vector2(9.5, 13.75)
+
+[node name="Kitty" type="CharacterBody2D" unique_id=1656587690 node_paths=PackedStringArray("animation", "area_2D", "hitbox")]
 collision_layer = 5
 script = ExtResource("1_2jn2o")
 animation = NodePath("AnimatedSprite2D")
-area_2d = NodePath("Area2D")
+area_2D = NodePath("Area2D")
+hitbox = NodePath("Hitbox")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1766981908]
 sprite_frames = ExtResource("1_cc48p")
-animation = &"jump"
+animation = &"idle"
+frame_progress = 0.75728285
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1120365705]
-position = Vector2(0, 1.0390625)
+position = Vector2(0.5, 1.5)
 shape = SubResource("RectangleShape2D_2jn2o")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1346111047]
@@ -28,5 +33,15 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=508118528]
-position = Vector2(0, 1)
+position = Vector2(0.46875, 1.5)
 shape = SubResource("RectangleShape2D_2hvnu")
+debug_color = Color(0.18890715, 0.626123, 0.41756323, 0.41960785)
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1739941421]
+collision_layer = 2
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1480327533]
+position = Vector2(19.75, 6.125)
+shape = SubResource("RectangleShape2D_p4e62")
+debug_color = Color(0.9372549, 0.6, 0.69803923, 0.41960785)
