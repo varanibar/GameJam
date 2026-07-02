@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c2evtwqvsqdwg"]
+
+[ext_resource type="Script" uid="uid://dbcp7bmdomvkm" path="res://scenes/mugs/mugs_container.gd" id="1_sfhey"]
+
+[node name="MugsContainer" type="Node" unique_id=671132223]
+script = ExtResource("1_sfhey")

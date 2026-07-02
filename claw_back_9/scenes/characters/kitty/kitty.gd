@@ -87,7 +87,7 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 #when kitty touches a spike it dies:
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	animation.modulate = Color.DARK_RED
-	print("DEAD")
+	print("DEAD?")
 	animation.flip_v = true
 	_dead = true
 	await get_tree().create_timer(1).timeout

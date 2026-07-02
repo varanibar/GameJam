@@ -5,5 +5,5 @@ extends CharacterBody2D
 #we will then change it to Animation: AnimatedSprite2D
 @export var animation_ghost: AnimatedSprite2D
 
-func _physics_process(_delta):
+func _ready():
 	animation_ghost.play("idle")
