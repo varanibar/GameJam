@@ -6,6 +6,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GlobalController.signal_updated_lives.connect(_update_text_lives)
+	_update_text_lives()
 
 func _update_text_lives():
-	label_lives.text = "Kitty lives: " + str(GlobalController.lives)
+	label_lives.text = "Salem's lives: " + str(GlobalController.lives)

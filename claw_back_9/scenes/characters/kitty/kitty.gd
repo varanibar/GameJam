@@ -1,8 +1,6 @@
 extends CharacterBody2D
 
 
-signal dead_player
-
 @export var animation: AnimatedSprite2D #While selecting the Player node, in the inspector panel under "player.gd", change: Animation: AnimatedSprite2D
 @export var area_2D: Area2D #While selecting the Player node, in the inspector panel under "player.gd", change: Area 2D: Areat2D
 @export var hitbox: Area2D
@@ -10,9 +8,10 @@ signal dead_player
 
 var _speed: float = 100.0
 var _speed_jump: float = -400.0
-var _dead: bool = false
+var _is_dead: bool = false
 var _is_right: bool = true
 var _is_attacking: bool = false
+var _is_dead_animating: bool = false
 
 
 func _ready():
@@ -20,10 +19,11 @@ func _ready():
 	area_2D.body_entered.connect(_on_area_2d_body_entered) #this cnnects the area to the player, it will call whatever we have in the function _on_area_2d_body_entered
 	hitbox.area_entered.connect(_on_hitbox_area_entered) #when the hitbox touches another area2D, call this function
 	hitbox.monitoring = false #hitbox detection ability is off
+	GlobalController.signal_game_over.connect(game_over)
 
 
 func _physics_process(delta):
-	if _dead:
+	if _is_dead:
 		return
 
 	#gravity
@@ -78,18 +78,29 @@ func _attack() -> void:
 	hitbox.monitoring = false
 	_is_attacking = false
 
+
 #when hitbox touches the mug's area2D:
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	var mug = area.get_parent() #the take_damage function is in the parent node (mugs) and not in the child node (area2d), thats why we get the parent of the area node
 	if mug.has_method("destroy_mug"):
 		mug.destroy_mug()
 
+
+func game_over():
+	if _is_dead_animating:
+		return
+	_is_dead = true
+	_is_dead_animating = true
+	animation.modulate = Color.DARK_RED
+	animation.flip_v = true
+	var tween := create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(self, "rotation_degrees", 15, 0.35)
+	tween.tween_property(self, "position", position + Vector2(0, -90), 0.35).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	tween.chain().tween_property(self, "position", position + Vector2(0, 1200), 0.9).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+	tween.parallel().tween_property(self, "rotation_degrees", 70, 0.9)
+
+
 #when kitty touches a spike it dies:
 func _on_area_2d_body_entered(_body: Node2D) -> void:
-	animation.modulate = Color.DARK_RED
-	print("DEAD?")
-	animation.flip_v = true
-	_dead = true
-	await get_tree().create_timer(1).timeout
-	dead_player.emit()
-	#animation.stop()
+	GlobalController.lost_life()

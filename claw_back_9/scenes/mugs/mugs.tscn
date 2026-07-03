@@ -6,9 +6,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p4e62"]
 size = Vector2(16, 16)
 
-[node name="Mugs" type="Node2D" unique_id=1683324784 node_paths=PackedStringArray("animation")]
+[node name="Mugs" type="Node2D" unique_id=1683324784 node_paths=PackedStringArray("animation", "collision_shape")]
 script = ExtResource("1_f58b3")
 animation = NodePath("AnimatedSprite2D")
+collision_shape = NodePath("Area2D/CollisionShape2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=60696780]
 position = Vector2(-3.8146973e-06, -3.8146973e-06)

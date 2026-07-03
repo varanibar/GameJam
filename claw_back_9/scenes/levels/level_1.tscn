@@ -2,7 +2,6 @@
 
 [ext_resource type="TileSet" uid="uid://bsyt1y5gx2v58" path="res://tile_sets/dungeon.tres" id="1_7n1yb"]
 [ext_resource type="PackedScene" uid="uid://dvq7pspowfvs" path="res://scenes/borders/border.tscn" id="1_ghvtn"]
-[ext_resource type="PackedScene" uid="uid://bh0tfbp1us0m5" path="res://scenes/characters/practice_character/player.tscn" id="3_janvk"]
 [ext_resource type="PackedScene" uid="uid://d2y08c38phn14" path="res://scenes/characters/kitty/kitty.tscn" id="4_igcjm"]
 [ext_resource type="PackedScene" uid="uid://bycvhtpjrtpkr" path="res://scenes/characters/ghost/ghost.tscn" id="5_jr17i"]
 [ext_resource type="PackedScene" uid="uid://c2evtwqvsqdwg" path="res://scenes/mugs/mugs_container.tscn" id="6_oc4kc"]
@@ -11,7 +10,7 @@
 [node name="Level1" type="Node2D" unique_id=801104236]
 
 [node name="Tiles" type="TileMapLayer" parent="." unique_id=1429428056]
-tile_map_data = PackedByteArray("AADz/wMAAAAAAAAAAAD0/wMAAAAAAAAAAAD1/wMAAAAAAAAAAAD2/wIAAAAAAAAAAAD3/wIAAAAAAAAAAAD4/wIAAAAAAAAAAAD5/wIAAAAAAAAAAAD6/wEAAAAAAAAAAAD7/wEAAAAAAAAAAAD8/wEAAAAAAAAAAAD//wYAAAAAAAAAAAAAAAUAAAAAAAAAAAD//wUAAAAAAAAAAAAAAAYAAAAAAAAAAAAMAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAEAAMAAAACAAAAAAAFAAMAAAACAAAAAAD6////AAACAAAAAAD3//z/AAACAAAAAAD2//z/AAACAAAAAAADAAMAAAACAAAAAAACAAMAAAACAAAAAAD///v/AAACAAAAAAAAAPv/AAACAAAAAAD6//v/AAACAAAAAAD7//v/AAACAAAAAAD8//v/AAACAAAAAAAIAP7/AAACAAAAAAAJAP7/AAACAAAAAAAEAP7/AAACAAAAAAD7////AAACAAAAAAD1/wAAAAACAAAAAAD0/wAAAAACAAAAAAA=")
+tile_map_data = PackedByteArray("AADz/wMAAAAAAAAAAAD0/wMAAAAAAAAAAAD1/wMAAAAAAAAAAAD2/wIAAAAAAAAAAAD3/wIAAAAAAAAAAAD4/wIAAAAAAAAAAAD5/wIAAAAAAAAAAAD6/wEAAAAAAAAAAAD7/wEAAAAAAAAAAAD8/wEAAAAAAAAAAAD//wYAAAAAAAAAAAAAAAUAAAAAAAAAAAD//wUAAAAAAAAAAAAAAAYAAAAAAAAAAAAMAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAEAAMAAAACAAAAAAAFAAMAAAACAAAAAAD6////AAACAAAAAAD3//z/AAACAAAAAAD2//z/AAACAAAAAAADAAMAAAACAAAAAAACAAMAAAACAAAAAAD///v/AAACAAAAAAAAAPv/AAACAAAAAAD6//v/AAACAAAAAAD7//v/AAACAAAAAAD8//v/AAACAAAAAAAIAP7/AAACAAAAAAAJAP7/AAACAAAAAAAEAP7/AAACAAAAAAD7////AAACAAAAAAD1/wAAAAACAAAAAAD0/wAAAAACAAAAAAD8////AAACAAAAAAADAP7/AAACAAAAAAA=")
 tile_set = ExtResource("1_7n1yb")
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=1917330252]
@@ -20,10 +19,6 @@ tile_map_data = PackedByteArray("AAAEAPn/AAACAAMAAAAEAPr/AAACAAMAAAAEAPv/AAACAAM
 tile_set = ExtResource("1_7n1yb")
 
 [node name="Border" parent="." unique_id=108868477 instance=ExtResource("1_ghvtn")]
-
-[node name="Player" parent="." unique_id=791686970 instance=ExtResource("3_janvk")]
-visible = false
-position = Vector2(-66, -15)
 
 [node name="Kitty" parent="." unique_id=1656587690 instance=ExtResource("4_igcjm")]
 position = Vector2(-163, 89)
