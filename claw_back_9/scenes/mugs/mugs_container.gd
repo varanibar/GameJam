@@ -3,7 +3,6 @@ extends Node
 
 var _mugs_destroyed: int = 0
 var _total_mugs: int = 0
-var _lives: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,7 +18,9 @@ func _ready() -> void:
 #for the mugs to be able to call this function, so the mugs script needs a reference to this script
 func is_mug_broken():
 	_mugs_destroyed += 1
+	GlobalController.mugs_broken()
 	print("mugs destroyed: ", _mugs_destroyed)
-	if _mugs_destroyed == 9:
-		_lives += 1
+	if _mugs_destroyed == 3:
+		GlobalController.gained_life()
 		print("GAINED A LIFE")
+		_mugs_destroyed = 0

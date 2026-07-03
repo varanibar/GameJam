@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cn41tukhmvsb6"]
+
+[ext_resource type="Script" uid="uid://bdkgutxlj1tlh" path="res://scenes/interface/lives_counter.gd" id="1_ukty6"]
+
+[node name="LivesCounter" type="Control" unique_id=1139116214 node_paths=PackedStringArray("label_lives")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ukty6")
+label_lives = NodePath("Label")
+
+[node name="Label" type="Label" parent="." unique_id=504372199]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 79.0
+offset_bottom = 31.0
+text = "Kitty lives: 0"

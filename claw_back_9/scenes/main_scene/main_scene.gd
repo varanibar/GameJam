@@ -13,21 +13,18 @@ func _ready() -> void:
 	_create_level(_level_current)
 
 
+
 #athe level needs to be instantiated and afterwards it has to be
 #added to the Scene Tree, wee need to add level_1 as a child of 
 #Main scene, for this we use the function add child 
 func _create_level(level_number: int):
 	_level_instance = levels[level_number - 1].instantiate()
 	add_child(_level_instance)
-	
 	#Array of the children nodes of the instantiated level(kitty, ghost, player, etc)
-	var children := _level_instance.get_children()
-	#filtering out the children that belong to the group "characters"
-	#connecting the player to the restart level function so the signal emitted
-	#by the player when it dies can trigger the function
+	var children := _level_instance.get_children() #filtering out the children that belong to the group "characters"
 	for i in children.size():
 		if children[i].is_in_group("characters") and children[i].name == "Kitty":
-			children[i].dead_player.connect(_restart_level)
+			children[i].dead_player.connect(_restart_level)  #when kitty emits the signal "dead_player", call my function "_restart_level
 			break
 
 

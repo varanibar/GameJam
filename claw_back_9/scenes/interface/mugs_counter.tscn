@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cm35jrfd3g2ms"]
+
+[ext_resource type="Script" uid="uid://bpboymlnasmxc" path="res://scenes/interface/mugs_counter.gd" id="1_dmg4b"]
+
+[node name="MugsCounter" type="Control" unique_id=1450247838 node_paths=PackedStringArray("label_mugs")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dmg4b")
+label_mugs = NodePath("Label")
+
+[node name="Label" type="Label" parent="." unique_id=1823850734]
+layout_mode = 0
+offset_left = 271.0
+offset_right = 390.0
+offset_bottom = 23.0
+text = "Enchanted mugs: 0"
