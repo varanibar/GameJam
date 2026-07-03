@@ -14,6 +14,7 @@ func gained_life():
 	lives += 1
 	signal_updated_lives.emit()
 	if lives >= 9:
+		signal_updated_lives.emit()
 		signal_win_game.emit()
 
 

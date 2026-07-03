@@ -96,4 +96,4 @@ func stop_mug() -> void:
 	_is_stopped = true
 	if _tween:
 		_tween.kill()
-	animation.stop()
+	await animation.animation_finished

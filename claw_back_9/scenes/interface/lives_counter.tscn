@@ -1,6 +1,13 @@
 [gd_scene format=3 uid="uid://cn41tukhmvsb6"]
 
 [ext_resource type="Script" uid="uid://bdkgutxlj1tlh" path="res://scenes/interface/lives_counter.gd" id="1_ukty6"]
+[ext_resource type="FontFile" uid="uid://u0eaadpb50uu" path="res://fonts/Jersey10-Regular.ttf" id="2_a0j18"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_04qc7"]
+font = ExtResource("2_a0j18")
+font_size = 20
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.583)
 
 [node name="LivesCounter" type="Control" unique_id=1139116214 node_paths=PackedStringArray("label_lives")]
 layout_mode = 3
@@ -14,7 +21,10 @@ label_lives = NodePath("Label")
 
 [node name="Label" type="Label" parent="." unique_id=504372199]
 layout_mode = 0
-offset_top = 8.0
-offset_right = 79.0
-offset_bottom = 31.0
-text = "Kitty lives: 0"
+offset_left = 2.0
+offset_top = 10.0
+offset_right = 1150.0
+offset_bottom = 50.0
+text = "  Kitty lives: 0"
+label_settings = SubResource("LabelSettings_04qc7")
+horizontal_alignment = 1

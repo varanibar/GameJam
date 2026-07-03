@@ -1,5 +1,8 @@
 [gd_resource type="Theme" format=3 uid="uid://kofragyldqxi"]
 
+[ext_resource type="FontFile" uid="uid://u0eaadpb50uu" path="res://fonts/Jersey10-Regular.ttf" id="1_p3vrl"]
+
 [resource]
+default_font = ExtResource("1_p3vrl")
 default_font_size = 60
-Button/fonts/font = null
+Button/fonts/font = ExtResource("1_p3vrl")

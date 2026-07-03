@@ -1,6 +1,13 @@
 [gd_scene format=3 uid="uid://cm35jrfd3g2ms"]
 
 [ext_resource type="Script" uid="uid://bpboymlnasmxc" path="res://scenes/interface/mugs_counter.gd" id="1_dmg4b"]
+[ext_resource type="FontFile" uid="uid://u0eaadpb50uu" path="res://fonts/Jersey10-Regular.ttf" id="2_shrr5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a0j18"]
+font = ExtResource("2_shrr5")
+font_size = 20
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.48200002)
 
 [node name="MugsCounter" type="Control" unique_id=1450247838 node_paths=PackedStringArray("label_mugs")]
 layout_mode = 3
@@ -14,7 +21,9 @@ label_mugs = NodePath("Label")
 
 [node name="Label" type="Label" parent="." unique_id=1823850734]
 layout_mode = 0
-offset_left = 271.0
-offset_right = 390.0
-offset_bottom = 23.0
+offset_left = 16.0
+offset_top = 10.0
+offset_right = 1147.0
+offset_bottom = 50.0
 text = "Enchanted mugs: 0"
+label_settings = SubResource("LabelSettings_a0j18")

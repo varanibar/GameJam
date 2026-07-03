@@ -10,7 +10,7 @@ size = Vector2(29, 23)
 size = Vector2(28.9375, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p4e62"]
-size = Vector2(17, 13.75)
+size = Vector2(21, 13.75)
 
 [node name="Kitty" type="CharacterBody2D" unique_id=1656587690 node_paths=PackedStringArray("animation", "area_2D", "hitbox")]
 collision_layer = 4
@@ -21,7 +21,9 @@ hitbox = NodePath("Hitbox")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1766981908]
 sprite_frames = ExtResource("1_cc48p")
-animation = &"fly"
+animation = &"win_cloud"
+frame = 6
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1120365705]
 position = Vector2(0.5, 1.5)
@@ -41,6 +43,6 @@ collision_layer = 2
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1480327533]
-position = Vector2(23.5, 6.125)
+position = Vector2(21.5, 6.125)
 shape = SubResource("RectangleShape2D_p4e62")
 debug_color = Color(0.9372549, 0.6, 0.69803923, 0.41960785)

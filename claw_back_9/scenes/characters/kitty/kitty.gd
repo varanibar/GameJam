@@ -111,13 +111,14 @@ func win_animation():
 	_is_dead = true
 	hitbox.set_deferred("monitoring", false)
 	area_2D.set_deferred("monitoring", false)
-	animation.modulate = Color(0.6, 0.8, 1.0, 1.0)
 	velocity = Vector2.ZERO
+	animation.play("win_cloud")
+	await animation.animation_finished
 	while not is_on_floor():
 		velocity += get_gravity() * get_physics_process_delta_time()
 		move_and_slide()
 		await get_tree().physics_frame
-	animation.play("run")
+	animation.play("win_walk")
 	animation.flip_h = false
 	var tween := create_tween()
 	tween.tween_property(self, "position:x", position.x + 500, 8.0)
