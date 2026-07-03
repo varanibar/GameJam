@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="claw_back_9"
+config/name="Salems_quest"
 run/main_scene="uid://b4g8s01vusmgq"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
