@@ -11,6 +11,7 @@ var _level_instance: Node
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GlobalController.signal_game_over.connect(_restart_level)
+	GlobalController.signal_win_game.connect(_win_game)
 	_create_level(_level_current)
 
 
@@ -33,6 +34,12 @@ func _delete_level():
 
 
 func _restart_level():
+	await get_tree().create_timer(2.0).timeout
 	GlobalController.reset_game() #resetting the counters
 	_delete_level()
 	_create_level.call_deferred(_level_current) #adding call deferred mdelays the execution of the function until the frame is over
+
+
+func _win_game():
+	await get_tree().create_timer(2.0).timeout
+	

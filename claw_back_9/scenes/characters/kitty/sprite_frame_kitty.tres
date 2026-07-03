@@ -66,6 +66,11 @@ animations = [{
 "name": &"attack",
 "speed": 20.0
 }, {
+"frames": [],
+"loop": 1,
+"name": &"fly",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3xgei")

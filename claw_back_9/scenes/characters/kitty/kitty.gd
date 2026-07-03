@@ -20,6 +20,7 @@ func _ready():
 	hitbox.area_entered.connect(_on_hitbox_area_entered) #when the hitbox touches another area2D, call this function
 	hitbox.monitoring = false #hitbox detection ability is off
 	GlobalController.signal_game_over.connect(game_over)
+	GlobalController.signal_win_game.connect(win_animation)
 
 
 func _physics_process(delta):
@@ -86,6 +87,11 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		mug.destroy_mug()
 
 
+#when kitty touches a spike it dies:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
+	GlobalController.lost_life()
+
+
 func game_over():
 	if _is_dead_animating:
 		return
@@ -101,6 +107,23 @@ func game_over():
 	tween.parallel().tween_property(self, "rotation_degrees", 70, 0.9)
 
 
-#when kitty touches a spike it dies:
-func _on_area_2d_body_entered(_body: Node2D) -> void:
-	GlobalController.lost_life()
+func win_animation():
+	_is_dead = true
+	hitbox.set_deferred("monitoring", false)
+	area_2D.set_deferred("monitoring", false)
+	animation.modulate = Color(0.6, 0.8, 1.0, 1.0)
+	velocity = Vector2.ZERO
+	while not is_on_floor():
+		velocity += get_gravity() * get_physics_process_delta_time()
+		move_and_slide()
+		await get_tree().physics_frame
+	animation.play("run")
+	animation.flip_h = false
+	var tween := create_tween()
+	tween.tween_property(self, "position:x", position.x + 500, 8.0)
+	
+	#tween.tween_property(self, "position:y", position.y + 120, 0.8).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	#tween.set_parallel(true)
+	#tween.tween_property(self, "position", position + Vector2(0, -250), 8).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	#tween.tween_property(self, "rotation_degrees", 12, 8)
+	#tween.tween_property(animation, "modulate:a", 0.7, 8)

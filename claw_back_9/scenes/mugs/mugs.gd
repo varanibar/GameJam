@@ -12,6 +12,8 @@ var _is_enchanted: bool
 var _tween: Tween
 var _start_position_x: float
 var _start_position_y: float
+var _is_stopped: bool = false
+
 
 func _ready() -> void:
 	animation.play("idle")
@@ -21,17 +23,19 @@ func _ready() -> void:
 
 
 func enchant_mug() -> void:
-	if _is_broken:
+	if _is_broken or _is_stopped:
 		return
 	_is_enchanted = true
 	_update_visual()
 	await get_tree().create_timer(4.0).timeout
 	
-	if not _is_broken:
+	if not _is_broken and not _is_stopped:
 		disenchant_mug()
 
 
 func disenchant_mug() -> void:
+	if _is_stopped:
+		return
 	_is_enchanted = false
 	_update_visual()
 
@@ -48,6 +52,8 @@ func destroy_mug() -> void:
 	hide()
 	collision_shape.disabled = true
 	await get_tree().create_timer(3.0).timeout
+	if _is_stopped:
+		return
 	_is_broken = false
 	_is_enchanted = false
 	animation.play("idle")
@@ -85,3 +91,9 @@ func _update_visual() -> void:
 	else:
 		animation.modulate = Color(1, 1, 1) # normal
 		_initiate_animation()
+
+func stop_mug() -> void:
+	_is_stopped = true
+	if _tween:
+		_tween.kill()
+	animation.stop()

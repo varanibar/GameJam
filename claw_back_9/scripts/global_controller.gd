@@ -4,7 +4,7 @@ extends Node
 signal signal_updated_lives
 signal signal_updated_mugs
 signal signal_game_over
-signal signal_win
+signal signal_win_game
 
 var lives: int
 var mugs: int
@@ -13,8 +13,8 @@ var mugs: int
 func gained_life():
 	lives += 1
 	signal_updated_lives.emit()
-	if lives == 9:
-		signal_win.emit()
+	if lives >= 9:
+		signal_win_game.emit()
 
 
 func lost_life():

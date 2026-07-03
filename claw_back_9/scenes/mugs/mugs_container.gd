@@ -4,10 +4,11 @@ extends Node
 
 var _mugs_destroyed: int = 0
 var _total_mugs: int = 0
-
+var _is_game_finished: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GlobalController.signal_win_game.connect(stop_all_mugs)
 	var array_mugs:= get_children() #we are getting an array of the children of the node MugsContainer which will be the scene Mugss
 	_total_mugs = array_mugs.size() 
 	for mugs in array_mugs:
@@ -19,13 +20,15 @@ func _ready() -> void:
 
 
 func enchant_loop() -> void:
-	while true:
+	while not _is_game_finished:
 		await get_tree().create_timer(2.0).timeout
-		enchant_random_mug()
+		
+		if not _is_game_finished:
+			enchant_random_mug()
 
 
 func enchant_random_mug() -> void:
-	var array_mugs:= get_children().filter(func(mug): return mug.visible)
+	var array_mugs:= get_children().filter(func(child): return child.visible)
 	if array_mugs.is_empty():
 		return
 	var mug = array_mugs.pick_random()
@@ -44,3 +47,11 @@ func is_mug_broken():
 
 func is_wrong_mug_broken():
 	GlobalController.lost_life()
+
+
+
+func stop_all_mugs() -> void:
+	_is_game_finished = true
+	for mug in get_children():
+		if mug.has_method("stop_mug"):
+			mug.stop_mug()
